@@ -18,7 +18,7 @@ module.exports = {
             throw new Error('Ids provided did not match existing users');
         }
 
-        const validateUserFollowing = await followingRepository.findOne({
+        const validateUserFollowing = await followingRepository.findAnother({
             where: {
                 user_id: userId,
                 following_id: followingId
