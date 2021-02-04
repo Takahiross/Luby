@@ -35,7 +35,7 @@ module.exports = {
             }
         }
 
-        const validateUserStar = await repositoryStarsRepository.findOne({
+        const validateUserStar = await repositoryStarsRepository.findAnother({
             where: {
                 user_id: filteredNewProperties.userId,
                 repository_id: filteredNewProperties.repositoryId
