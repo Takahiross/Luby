@@ -115,6 +115,12 @@ class UserRepository{
 
         return user
     }
+    
+    async findAnother(options) {
+       const user = await User.findAnother(options)
+
+       return user
+    }
 }
 
 
