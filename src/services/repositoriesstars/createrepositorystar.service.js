@@ -20,7 +20,7 @@ module.exports = {
             throw new Error('Ids did not match existing users or repositories');
         }
 
-        const validateUserStar = await repositoryStarsRepository.findOne({
+        const validateUserStar = await repositoryStarsRepository.findAnother({
             where: {
                 user_id: userId,
                 repository_id: repositoryId
