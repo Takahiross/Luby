@@ -70,6 +70,12 @@ class FollowerRepository{
         const follower = Follower.findByPk(id);
         return follower;
     }
+    
+    async findAnother(options) {
+       const follower = await Follower.findAnother(options);
+
+       return follower;
+    }    
 }
 
 module.exports = FollowerRepository
