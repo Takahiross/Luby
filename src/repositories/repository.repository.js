@@ -85,6 +85,12 @@ class RepositoryRepository{
         const repository = await Repository.findByPk(id);
         return repository;
     }
+    
+    async findAnother(options) {
+       const repository = await Repository.findAnother(options);
+
+       return repository;
+    }    
 }
 
 module.exports = RepositoryRepository
