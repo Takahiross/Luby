@@ -8,14 +8,14 @@ module.exports = {
         const followingRepository = new FollowingRepository();
 
         if(!(validate(userId) && validate(followingId))) {
-            throw new Error('Ids provided are not in UUID pattern');
+            throw new Error('Ids are not in UUID pattern');
         }
 
         const user = await userRepository.findByPk(userId);
         const following = await userRepository.findByPk(followingId);
     
         if(!user || !following) {
-            throw new Error('Ids provided did not match existing users');
+            throw new Error('Ids did not match existing users');
         }
 
         const validateUserFollowing = await followingRepository.findAnother({
@@ -26,7 +26,7 @@ module.exports = {
         })
 
         if(validateUserFollowing) {
-            throw new Error('There\'s already a following relation with the provided Ids');
+            throw new Error('There\'s already a following relation with the Ids');
         }
     
         const createdFollowing = await followingRepository.create({
