@@ -28,7 +28,7 @@ module.exports = {
             throw new Error('Not all necessary fields provided or fields are not in correct format');
         }
 
-        const user = await userRepository.findOne({
+        const user = await userRepository.findAnother({
             where: {
                 username
             }
@@ -41,7 +41,7 @@ module.exports = {
         name = name.split(' ').join('-');
         slug = slug.endsWith('/') ? `${slug}${username}/${name}` : `${slug}/${username}/${name}`;
 
-        const repository = await repositoryRepository.findOne({
+        const repository = await repositoryRepository.findAnother({
             where: {
                 slug
             }
