@@ -76,7 +76,7 @@ class RepositoryStars{
     }
     
     async findAnother(options) {
-      const repository = await User.findAnother(options);
+      const repository = await RepositoryStar.findAnother(options);
 
       return repository;
     }
