@@ -71,6 +71,12 @@ class FollowingRepository{
         const following = await Following.findByPk(id);
         return following;
     }
+    
+    async findAnother(options) {
+       const following = await Following.findAnother(options);
+
+       return following;
+    }    
 }
 
 module.exports = FollowingRepository
