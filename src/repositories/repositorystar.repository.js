@@ -74,6 +74,12 @@ class RepositoryStars{
         const repository = await RepositoryStar.findByPk(id);
         return repository;
     }
+    
+    async findAnother(options) {
+      const repository = await User.findAnother(options);
+
+      return repository;
+    }
 
 }
 
